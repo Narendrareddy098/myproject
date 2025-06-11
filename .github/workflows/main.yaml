@@ -9,6 +9,15 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build JAR with Maven
+        run: mvn clean package --file pom.xml
+        
       - name: Checkout repository
         uses: actions/checkout@v3
 
