@@ -16,7 +16,7 @@ jobs:
           java-version: '17'
 
       - name: Build JAR with Maven
-        run: mvn clean package --file pom.xml
+        run: mvn clean package 
         
       - name: Checkout repository
         uses: actions/checkout@v3
